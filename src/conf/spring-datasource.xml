@@ -52,7 +52,6 @@
 	<bean id="trackTest" class="org.kingdom.action.TrackTest">
 		<property name="jdbc" ref="resJdbcTemplate" />
 		<property name="sqliteJdbc" ref="sqlite" />
-		<property name="wfile" value="${track.wfile}" />
 		<property name="partition" value="${track.partition}" />
 	</bean>
 	
