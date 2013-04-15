@@ -11,6 +11,9 @@ public class MainGo {
     private static Log log = LogFactory.getLog(MainGo.class);
 
 	public static void main(String[] args) throws IOException {
+		
+		 log.info("Go……");
+		
 		 Spring spring = new Spring();
 		 
 		 int KA = args.length;
@@ -56,6 +59,8 @@ public class MainGo {
 		 GPSTrackAction gpsTrackAction = spring.getSpring().getBean(GPSTrackAction.class);
 		 gpsTrackAction.action();
 		 }
+		 
+		 log.info("End……");
 		 
 	}
 

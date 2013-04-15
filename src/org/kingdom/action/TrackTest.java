@@ -26,15 +26,11 @@ public class TrackTest {
 	
 	private Sqlite sqliteJdbc;
 	
-	private String wfile = "track.test.txt";
-	
 	private String partition = " gps_t_track ";
 
 	private static DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	
 	public String homePage() throws IOException{
-		
-		BufferedWriter writer = new BufferedWriter(new FileWriter(new File(wfile)));
 		
 		//查询车辆
 		String sql = " select t.id,t.car_no,t.simid  from gps_t_car t  ";
@@ -43,13 +39,13 @@ public class TrackTest {
 			if(sing.get("id") == null || sing.get("id").toString() == null || sing.get("id").toString().trim().equals("")) continue;
 			if(sing.get("simid") == null || sing.get("simid").toString() == null || sing.get("simid").toString().trim().equals("")) continue;
 			if(sing.get("car_no") == null || sing.get("car_no").toString() == null || sing.get("car_no").toString().trim().equals("")) continue;
-			actionSing(sing.get("id").toString(),sing.get("simid").toString(),writer,"车辆 ："+sing.get("car_no"));
+			actionSing(sing.get("id").toString(),sing.get("simid").toString(),"车辆 ："+sing.get("car_no"));
 		}
-		writer.write("End...");
+		
 		return null;
 	}
 	
-	public void actionSing(String id,String simid,BufferedWriter writer,String msg) throws IOException{
+	public void actionSing(String id,String simid,String msg) throws IOException{
 		String sql = " SELECT t.comptertime,t.gpstime, t.latitude,t.longitude,t.speed,t.gpscar_id FROM "+partition+" t ";
 		sql = " SELECT t.comptertime,t.gpstime, t.latitude,t.longitude,t.speed,t.gpscar_id FROM gps_t_track t";
 		sql += " WHERE  t.gpsstate = 1 AND t.GPSCAR_ID = ? ";
@@ -98,10 +94,6 @@ public class TrackTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-
-	public void setWfile(String wfile) {
-		this.wfile = wfile;
 	}
 
 	public void setJdbc(JdbcTemplate jdbc) {
