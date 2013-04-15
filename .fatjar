@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Mon Apr 08 17:53:37 CST 2013
+onejar.license.required=false
+manifest.classpath=commons-dbcp-1.4.jar commons-logging.jar commons-pool-1.6.jar ojdbc14.jar ojdbc6.jar spring-aop-3.2.1.RELEASE.jar spring-beans-3.2.1.RELEASE.jar spring-context-3.2.1.RELEASE.jar spring-context-support-3.2.1.RELEASE.jar spring-core-3.2.1.RELEASE.jar spring-expression-3.2.1.RELEASE.jar spring-jdbc-3.2.1.RELEASE.jar spring-orm-3.2.1.RELEASE.jar spring-tx-3.2.1.RELEASE.jar
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=TrackTestJar_fat.jar
+manifest.mergeall=true
+manifest.mainclass=org.kingdom.action.MainGo
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=<jar|ojdbc14.jar>;<jar|ojdbc6.jar>;<jar|spring-aop-3.2.1.RELEASE.jar>;<jar|spring-beans-3.2.1.RELEASE.jar>;<jar|spring-context-3.2.1.RELEASE.jar>;<jar|spring-context-support-3.2.1.RELEASE.jar>;<jar|spring-core-3.2.1.RELEASE.jar>;<jar|spring-expression-3.2.1.RELEASE.jar>;<jar|spring-jdbc-3.2.1.RELEASE.jar>;<jar|spring-orm-3.2.1.RELEASE.jar>;<jar|spring-tx-3.2.1.RELEASE.jar>;<jar|commons-logging.jar>;<jar|commons-dbcp-1.4.jar>;<jar|commons-pool-1.6.jar>
+includes=
